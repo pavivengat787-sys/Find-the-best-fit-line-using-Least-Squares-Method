@@ -17,42 +17,50 @@ To implement univariate Linear Regression to fit a straight line using least squ
 6. Obtain the straight line equation Y=mX+b and plot the scatterplot.
 
 ## Program:
+~~~
+import numpy as np
+import matplotlib.pyplot as plt
+x=np.array(eval(input()))
+y=np.array(eval(input()))
+x_mean=np.mean(x)
+y_mean=np.mean(y)
+num=0
+denom=0
+for i in range(len(x)):
+    num+=(x[i]-x_mean)*(y[i]-y_mean)
+    denom=(x[i]-x_mean)**2
+    m=num/denom
+    b=y_mean-m*x_mean
+    print(m,b)
+    y_predicted=m*x+b
+    print(y_predicted)
+    plt.scatter(x,y)
+    plt.plot(x,y_predicted,  color='red')
+    plt.show()
+    ~~~
 ```
 /*
 Program to implement univariate Linear Regression to fit a straight line using least squares.
-Developed by: R.DEEPIKA
-RegisterNumber:  212225230046
+Developed by: Rahul
+RegisterNumber:25003095
 */
 ```
-```
-import numpy as np
-import matplotlib.pyplot as plt
-X = np.array([1, 2, 3, 4, 5])
-Y = np.array([2, 4, 5, 4, 5])
-x_mean = np.mean(X)
-y_mean = np.mean(Y)
-numerator = np.sum((X - x_mean) * (Y - y_mean))
-denominator = np.sum((X - x_mean) ** 2)
-m = numerator/denominator
-b = y_mean - m * x_mean
-print("Slope (m):", m)
-print("Intercept (b):", b)
-Y_pred = m * X + b
-print("Value:", Y_pred)
-x = input("Enter value: ")
-yy = m * float(x) + b
-print("Value:", yy)
-plt.scatter(X, Y, label="Data Points")
-plt.plot(X, Y_pred, label="Best Fit Line")
-plt.xlabel("X")
-plt.ylabel("Y")
-plt.legend()
-plt.title("Univariate Linear Regression")
-plt.show()
-```
+
 
 ## Output:
-<img width="733" height="518" alt="image" src="https://github.com/user-attachments/assets/72560b9f-62c0-42a1-b9ad-435f52b025c4" />
+~~~
+<img width="354" height="61" alt="image" src="https://github.com/user-attachments/assets/20521689-c86a-40fe-9cbe-b49660f655b6" />
+
+
+<img width="455" height="53" alt="image" src="https://github.com/user-attachments/assets/174a2a64-b457-4576-b801-ef8357f49c4c" />
+
+
+<img width="742" height="46" alt="image" src="https://github.com/user-attachments/assets/355bf6e1-ceb1-4288-88b0-bd695b7b82b1" />
+
+
+
+
+<img width="760" height="516" alt="image" src="https://github.com/user-attachments/assets/065c33dd-416b-4ede-ada1-c138b1f7e3e2" />
 
 
 ## Result:
